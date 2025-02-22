@@ -76,6 +76,12 @@ return {
 
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
+
+        vim.api.nvim_set_hl(0, "Pmenu",      { bg = "#16161D", fg = "#C8C093" }) -- Fondo del menú y texto
+        vim.api.nvim_set_hl(0, "PmenuSel",   { bg = "#223249", fg = "#C8C093" }) -- Selección en el menú
+        vim.api.nvim_set_hl(0, "FloatBorder",{ bg = "#16161D", fg = "#727169" }) -- Borde del menú flotante
+        vim.api.nvim_set_hl(0, "NormalFloat",{ bg = "#16161D", fg = "#C8C093" }) -- Fondo de ventanas flotantes
+
         cmp.setup({
             snippet = {
                 expand = function(args)
@@ -85,9 +91,15 @@ return {
             mapping = cmp.mapping.preset.insert({
                 ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
                 ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-                ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+                ['<CR>'] = cmp.mapping.confirm({ select = true }),
                 ["<C-Space>"] = cmp.mapping.complete(),
-            }),
+            }),window = {
+                completion = {
+                    border = "rounded",
+                    winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
+
+                },
+            },
             sources = cmp.config.sources({
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' }, -- For luasnip users.

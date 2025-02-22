@@ -1,4 +1,4 @@
-vim.opt.guicursor = ""
+vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50"
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -27,4 +27,4 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
-
+vim.api.nvim_set_hl(0, "ColorColumn", {bg = "#c34043"})

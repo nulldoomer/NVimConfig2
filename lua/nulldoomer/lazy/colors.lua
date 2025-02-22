@@ -15,7 +15,7 @@ return {
             require("kanagawa").setup({
                 compile = false,
                 undercurl = true,
-                commentStyle = { italic = true},
+                commentStyle = { italic = true },
                 keywordStyle = { italic = false },
                 statementStyle = { bold = true },
                 transparent = true, -- Fondo transparente
@@ -25,52 +25,12 @@ return {
             ColorMyPencils()
         end
     },
-
     {
-        "erikbackman/brightburn.vim",
-    },
-
-    {
-        "folke/tokyonight.nvim",
-        lazy = true,
-        opts = {},
-    },
-
-    {
-        "ellisonleao/gruvbox.nvim",
-        name = "gruvbox",
+        "sainnhe/gruvbox-material",
+        lazy = true, -- No se carga hasta que se use
         config = function()
-            require("gruvbox").setup({
-                terminal_colors = true,
-                undercurl = true,
-                underline = false,
-                bold = true,
-                italic = {
-                    strings = false,
-                    emphasis = false,
-                    comments = false,
-                    operators = false,
-                    folds = false,
-                },
-                strikethrough = true,
-                inverse = true,
-                contrast = "",
-                transparent_mode = false,
-            })
-        end,
-    },
-
-    {
-        "rose-pine/neovim",
-        name = "rose-pine",
-        config = function()
-            require("rose-pine").setup({
-                disable_background = true,
-                styles = {
-                    italic = false,
-                },
-            })
+            vim.g.gruvbox_material_background = "medium" -- Opciones: "soft", "medium", "hard"
         end
-    },
+    }
 }
 

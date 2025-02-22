@@ -38,9 +38,9 @@ autocmd('BufEnter', {
     group = ThePrimeagenGroup,
     callback = function()
         if vim.bo.filetype == "zig" then
-            vim.cmd.colorscheme("tokyonight-night")
+            vim.cmd.colorscheme("kanagawa-dragon")
         else
-            vim.cmd.colorscheme("rose-pine-moon")
+            vim.cmd.colorscheme("kanagawa-dragon")
         end
     end
 })

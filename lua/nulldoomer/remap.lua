@@ -66,6 +66,8 @@ vim.keymap.set(
     "<leader>el",
     "oif err != nil {<CR>}<Esc>O.logger.Error(\"error\", \"error\", err)<Esc>F.;i"
 )
+vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Guardar archivo" })
+vim.keymap.set("i", "<C-s>", "<cmd>w<CR><Esc>", { desc = "Guardar archivo en modo Insert" })
 
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
